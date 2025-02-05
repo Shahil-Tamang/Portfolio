@@ -4,58 +4,109 @@
 <title>Social Media Links</title>
 <style>
 body {
-margin: 0;
-padding: 0;
-background-image: url('image/call.png');
-background-size: cover;
-background-repeat: no-repeat;
-background-attachment: fixed;
-height: 100vh;
-width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-image: url('image/call.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 header {
-  background-color:crimson;
+  background-color: crimson;
   color: white;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
+  font-size: 1em;
 }
 
 .social-media {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
-.social-media button {
-  background-color: transparent;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
+.social-media .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Add space between icons */
+}
+
+.social-media .social-icon {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.social-media .social-item {
+  display: flex;
+  flex-direction: column; /* Change to column to fit table */
+  align-items: center;
+  background-color: white;
   border-radius: 5px;
-  text-decoration: none;
-}
-.social-media img{
-    max-width: 150px;
-    height: auto;
-}
-.social-media a{
-    display: inline-block;
-    margin: 0 10px;
-}
-.facebook{
-    background-color: blue;
-}
-.instagram{
-    background-color: red;
-    max-width: 150px;
-    height: auto;
-    border-radius: 50%;
+  margin: 10px 0;
+  padding: 20px; /* Increase padding */
+  width: 350px;
 }
 
+.social-media img {
+  max-width: 140px; /* Double the max-width */
+  height: auto;
+  margin-bottom: 20px; /* Increase margin */
+}
 
+.social-media .text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.social-media .text-box .copy-button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Increase padding */
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px; /* Increase margin */
+}
+
+.social-media .text-box .copy-button:hover {
+  background-color: darkred;
+}
+
+.social-media .text-box .social-text {
+  font-size: 16px; /* Increase font size */
+  color: black;
+}
+
+.table-container {
+  width: 100%; /* Ensure the table container fits within the social-item */
+}
+
+.table-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-container th, .table-container td {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.table-container th {
+  background-color: crimson;
+  color: white;
+}
 </style>
 </head>
 <body>
@@ -65,10 +116,57 @@ header {
 </header>
 
 <div class="social-media">
-  <button><a href="https://www.facebook.com/share/19wYr6ebM1/?mibextid=wwXIfr"><img src="image/Facebook_Logo_Primary.png" alt="Facebook"></a></button>
-  <button><a href="https://www.instagram.com/shahiltamang48"><img src="image/2227.jpg" alt=""></a></button>
-  <button><a href="https://www.tiktok.com/@kuragari77"><img src="image/pngwing.com.png" alt="tiktok"></a></button>
+  <div class="social-icons">
+    <div class="social-icon">
+      <a href="https://www.facebook.com/share/19wYr6ebM1/?mibextid=wwXIfr"><img src="image/Facebook_Logo_Primary.png" alt="Facebook"></a>
+    </div>
+    <div class="social-icon">
+      <a href="https://www.instagram.com/shahiltamang48"><img src="image/2227.jpg" alt="Instagram"></a>
+    </div>
+    <div class="social-icon">
+      <a href="https://www.tiktok.com/@kuragari77"><img src="image/pngwing.com.png" alt="TikTok"></a>
+    </div>
+  </div>
+  
+  <div class="social-item">
+    <img src="image/mlbb icon.jpg" alt="Mobile Legend">
+    <div class="text-box">
+      <button class="copy-button" onclick="copyText('mobile-legend-id')">Copy ID</button>
+      <div class="social-text" id="mobile-legend">Mobile Legend Profile</div>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Info</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Username</td>
+          <td>暗がり</td>
+        </tr>
+        <tr>
+          <td>ID</td>
+          <td id="mobile-legend-id">811925830 (12239)</td>
+        </tr>
+        <tr>
+          <td>Highest Rank</td>
+          <td>Mythical Glory 98 Stars</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
+
+<script>
+function copyText(id) {
+  var text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    alert('Copied to clipboard: ' + text);
+  }, function(err) {
+    console.error('Could not copy text: ', err);
+  });
+}
+</script>
 
 </body>
 </html>
