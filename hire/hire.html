@@ -6,7 +6,6 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url('image/call.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -20,7 +19,7 @@ header {
   background-color: crimson;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 1em;
 }
 
@@ -36,24 +35,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Add space between icons */
+  gap: 30px; 
 }
 
 .social-media .social-item {
   display: flex;
-  flex-direction: column; /* Change to column to fit table */
+  flex-direction: column; 
   align-items: center;
-  background-color: transparent; /* Make background transparent */
+  background-color: transparent; 
   border-radius: 5px;
   margin: 10px 0;
-  padding: 20px; /* Increase padding */
+  padding: 20px; 
   width: 350px;
 }
 
 .social-media img {
-  max-width: 140px; /* Double the max-width */
+  max-width: 140px; 
   height: auto;
-  margin-bottom: 20px; /* Increase margin */
+  margin-bottom: 20px; 
 }
 
 .social-media .text-box {
@@ -67,10 +66,10 @@ header {
   background-color: crimson;
   color: white;
   border: none;
-  padding: 10px 15px; /* Increase padding */
+  padding: 10px 15px; 
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 10px; /* Increase margin */
+  margin-bottom: 10px; 
 }
 
 .social-media .text-box .copy-button:hover {
@@ -78,12 +77,12 @@ header {
 }
 
 .social-media .text-box .social-text {
-  font-size: 16px; /* Increase font size */
+  font-size: 16px;
   color: black;
 }
 
 .table-container {
-  width: 100%; /* Ensure the table container fits within the social-item */
+  width: 100%; 
 }
 
 .table-container table {
@@ -100,6 +99,43 @@ header {
 .table-container th {
   background-color: crimson;
   color: white;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+    font-size: 1.5em;
+  }
+
+  .social-media .social-icons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .social-media .social-item {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .social-media img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .social-media .text-box .copy-button {
+    padding: 15px 20px;
+    font-size: 1.2em;
+  }
+
+  .social-media .text-box .social-text {
+    font-size: 1.2em;
+  }
+
+  .table-container th, .table-container td {
+    padding: 15px;
+    font-size: 1.2em;
+  }
 }
 </style>
 </head>
