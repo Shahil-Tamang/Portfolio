@@ -1,163 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Social Media Links</title>
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  min-height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Media Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #f4f6f9, #eaeff5);
+      min-height: 100vh;
+      color: #333;
+    }
 
-header {
-  background-color: crimson;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  font-size: 1em;
-}
+    header {
+      background-color: crimson;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 1.8em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
 
-.social-media {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px;
+    }
 
-.social-media .social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px; 
-}
+    .social-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
 
-.social-media .social-item {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  background-color: transparent; 
-  border-radius: 5px;
-  margin: 10px 0;
-  padding: 20px; 
-  width: 350px;
-}
+    .social-icon {
+      background-color: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
 
-.social-media img {
-  max-width: 140px; 
-  height: auto;
-  margin-bottom: 20px; 
-}
+    .social-icon:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
 
-.social-media .text-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
-}
+    .social-icon img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
 
-.social-media .text-box .copy-button {
-  background-color: crimson;
-  color: white;
-  border: none;
-  padding: 10px 15px; 
-  border-radius: 5px;
-  cursor: pointer;
-  margin-bottom: 10px; 
-}
+    .icon-label {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95em;
+      color: #555;
+    }
 
-.social-media .text-box .copy-button:hover {
-  background-color: darkred;
-}
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
 
-.social-media .text-box .social-text {
-  font-size: 16px;
-  color: black;
-}
+    .social-item {
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
 
-.table-container {
-  width: 100%; 
-}
+    .social-item img {
+      max-width: 80px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
 
-.table-container table {
-  border-collapse: collapse;
-  width: 100%;
-}
+    .copy-button {
+      background-color: crimson;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-bottom: 15px;
+      transition: background 0.3s, transform 0.1s;
+    }
 
-.table-container th, .table-container td {
-  border: 1px solid black;
-  padding: 10px;
-  font-size: 1em;
-}
+    .copy-button:hover {
+      background-color: darkred;
+    }
 
-.table-container th {
-  background-color: crimson;
-  color: white;
-}
+    .copy-button:active {
+      transform: scale(0.97);
+    }
 
+    .social-text {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #444;
+    }
 
-@media (max-width: 768px) {
-  header {
-    padding: 20px 0;
-    font-size: 1.5em;
-  }
+    .table-container {
+      overflow-x: auto;
+      margin-top: 15px;
+    }
 
-  .social-media .social-icons {
-    flex-direction: column;
-    gap: 20px;
-  }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 1em;
+    }
 
-  .social-media .social-item {
-    width: 90%;
-    padding: 30px;
-  }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
 
-  .social-media img {
-    max-width: 100px;
-    margin-bottom: 10px;
-  }
+    th {
+      background-color: crimson;
+      color: white;
+    }
 
-  .social-media .text-box .copy-button {
-    padding: 15px 20px;
-    font-size: 1.2em;
-  }
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.4em;
+      }
 
-  .social-media .text-box .social-text {
-    font-size: 1.2em;
-  }
+      .copy-button {
+        font-size: 0.95em;
+        padding: 10px 16px;
+      }
 
-  .table-container th, .table-container td {
-    padding: 15px;
-    font-size: 1.2em;
-  }
-}
-</style>
+      th, td {
+        font-size: 0.9em;
+        padding: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>Social Media Links</h1>
+  Social Media Links
 </header>
 
 <div class="social-media">
+
+  <!-- Social Icon Grid -->
   <div class="social-icons">
     <div class="social-icon">
-      <a href="https://www.facebook.com/share/19wYr6ebM1/?mibextid=wwXIfr"><img src="image/Facebook_Logo_Primary.png" alt="Facebook"></a>
+      <a href="https://www.facebook.com/share/19wYr6ebM1/?mibextid=wwXIfr" target="_blank">
+        <img src="image/Facebook_Logo_Primary.png" alt="Facebook">
+        <span class="icon-label">Facebook</span>
+      </a>
     </div>
     <div class="social-icon">
-      <a href="https://www.instagram.com/shahiltamang48"><img src="image/2227.jpg" alt="Instagram"></a>
+      <a href="https://www.instagram.com/shahiltamang48" target="_blank">
+        <img src="image/2227.jpg" alt="Instagram">
+        <span class="icon-label">Instagram</span>
+      </a>
     </div>
     <div class="social-icon">
-      <a href="https://www.tiktok.com/@kuragari77"><img src="image/pngwing.com.png" alt="TikTok"></a>
+      <a href="https://www.tiktok.com/@kuragari77" target="_blank">
+        <img src="image/pngwing.com.png" alt="TikTok">
+        <span class="icon-label">TikTok</span>
+      </a>
     </div>
   </div>
-  
+
+  <!-- Mobile Legend Section -->
   <div class="social-item">
     <img src="image/mlbb icon.jpg" alt="Mobile Legend">
     <div class="text-box">
@@ -185,17 +214,18 @@ header {
       </table>
     </div>
   </div>
+
 </div>
 
 <script>
-function copyText(id) {
-  var text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text).then(function() {
-    alert('Copied to clipboard: ' + text);
-  }, function(err) {
-    console.error('Could not copy text: ', err);
-  });
-}
+  function copyText(id) {
+    var text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(function () {
+      alert('Copied to clipboard: ' + text);
+    }, function (err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
 </script>
 
 </body>
