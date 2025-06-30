@@ -164,24 +164,15 @@ section .title::after{
 
 /* home section styling */
 
-.home {
+.home{
     display: flex;
-    background: url("images/gpt.png") no-repeat center center / cover;
-    min-height: 100vh;
+    background: url("images/gpt.png") no-repeat center;
+    height: 100vh;
     color: #fff;
-    font-family: 'Ubuntu', sans-serif;
-
-    /* Remove this if image disappears */
-    /* background-attachment: fixed; */
-}
-
-/* iOS-specific fix using media query */
-@media screen and (max-device-width: 767px) and (orientation: portrait) {
-  .home {
-    background-attachment: scroll !important;
-    background-position: center center;
+    min-height: 500px;
     background-size: cover;
-  }
+   /* background-attachment: fixed;*/
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .home .max-width{
