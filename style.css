@@ -163,7 +163,7 @@ section .title::after{
 
 
 /* home section styling */
-.home{
+
  .home {
     display: flex;
     background: url("images/gpt.png") no-repeat center center;
