@@ -164,17 +164,14 @@ section .title::after{
 
 /* home section styling */
 .home{
-    .home {
     display: flex;
     background: url("images/gpt.png") no-repeat center;
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100vh;
     color: #fff;
     min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
-}
-
 }
 .home .max-width{
   width: 100%;
