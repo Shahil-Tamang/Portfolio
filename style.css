@@ -164,27 +164,26 @@ section .title::after{
 
 /* home section styling */
 
- .home {
+.home {
     display: flex;
-    background: url("images/gpt.png") no-repeat center center;
-    height: 100vh;
-    min-height: 500px;
-    background-size: cover;
+    background: url("images/gpt.png") no-repeat center center / cover;
+    min-height: 100vh;
     color: #fff;
     font-family: 'Ubuntu', sans-serif;
 
-    /* Remove fixed attachment */
-    background-attachment: scroll;
+    /* Remove this if image disappears */
+    /* background-attachment: fixed; */
 }
 
-/* Optional: Better iOS compatibility */
-@supports (-webkit-touch-callout: none) {
-    .home {
-        height: -webkit-fill-available;
-    }
+/* iOS-specific fix using media query */
+@media screen and (max-device-width: 767px) and (orientation: portrait) {
+  .home {
+    background-attachment: scroll !important;
+    background-position: center center;
+    background-size: cover;
+  }
 }
 
-}
 .home .max-width{
   width: 100%;
   display: flex;
