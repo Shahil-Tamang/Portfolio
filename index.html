@@ -273,5 +273,28 @@
     </footer>
 
     <script src="script.js"></script>
+
+
+
+    <script>
+  const home = document.querySelector('.home');
+  let latestScrollY = 0;
+
+  // Track scroll position
+  window.addEventListener('scroll', () => {
+    latestScrollY = window.scrollY;
+  });
+
+  // Smooth update using requestAnimationFrame
+  function updateBackground() {
+    const yOffset = latestScrollY * 0.5; // adjust multiplier if needed
+    home.style.backgroundPosition = `center calc(50% + ${yOffset}px)`;
+    requestAnimationFrame(updateBackground);
+  }
+
+  updateBackground(); // start the animation loop
+</script>
+
+    
 </body>
 </html>
