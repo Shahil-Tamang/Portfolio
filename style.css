@@ -164,15 +164,16 @@ section .title::after{
 
 /* home section styling */
 
-.home{
-    display: flex;
-    background: url("images/gpt.png") no-repeat center;
-    height: 100vh;
-    color: #fff;
-    min-height: 500px;
-    background-size: cover;
-   /* background-attachment: fixed;*/
-    font-family: 'Ubuntu', sans-serif;
+.home {
+  background: url("images/gpt.png") no-repeat center center / cover;
+  background-attachment: scroll; /* iOS-safe */
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  overflow: hidden;
 }
 
 .home .max-width{
